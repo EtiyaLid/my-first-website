@@ -146,3 +146,533 @@ nav {
 .btn-secondary:hover {
     background-color: #333;
 }
+
+/* --- Global Resets & Base Styles --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #333333;
+}
+
+/* --- About Section Styling --- */
+.about-section {
+  padding: 4rem 2rem;
+  background-color: #f9f9fb;
+}
+
+/* Flex Container for Desktop Layout */
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center; /* Vertically centers text with image */
+  gap: 3rem;           /* Adds space between columns */
+}
+
+/* Column 1: Image Styling */
+.about-image {
+  flex: 1;             /* Takes up 1 part of available flex space */
+}
+
+.about-image img {
+  width: 100%;         /* Makes image fill its wrapper */
+  max-width: 380px;    /* Prevents photo from growing too large */
+  height: auto;
+  border-radius: 12px; /* Smooth rounded corners */
+  object-fit: cover;   /* Prevents photo stretch/distortion */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Column 2: Content Styling */
+.about-content {
+  flex: 1.5;           /* Gives text slightly more room than the image */
+}
+
+.about-content h2 {
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+.about-content .tagline {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4f46e5;      /* Accent color */
+  margin-bottom: 1rem;
+}
+
+.about-content .bio {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+/* Button Styling */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #4f46e5;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #4338ca;
+}
+
+/* --- Responsive Media Query (Mobile Devices) --- */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column; /* Stacks image above text */
+    text-align: center;     /* Centers text content */
+    gap: 2rem;
+  }
+
+  .about-image img {
+    max-width: 250px;       /* Smaller profile picture on mobile */
+  }
+}
+
+/* Column 1: Image Wrapper */
+.about-image {
+  flex: 1;
+  /* Clips image overflow if you add an overlay or shine effect later */
+  overflow: hidden; 
+  border-radius: 12px; 
+}
+
+/* Profile Image Base State */
+.about-image img {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+  /* --- Animation & Transition Setup --- */
+  /* Controls WHICH properties animate, HOW LONG (0.3s), and the TIMING FUNCTION */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* --- Hover State --- */
+.about-image img:hover {
+  /* Scales the image up by 5% */
+  transform: scale(1.05); 
+  
+  /* Elevates the shadow to make it feel like it's lifting toward the viewer */
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2); 
+}
+
+@media (hover: hover) {
+  .about-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Skills Grid Layout */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;       /* Allows cards to wrap on smaller screens */
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.skill-card {
+  flex: 1 1 280px;      /* Responsive min-width of 280px */
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.skill-card h3 {
+  font-size: 1.1rem;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.skill-card p {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+/* Badge Tags Container */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Individual Skill Pill / Badge */
+.tag {
+  background-color: #f3f4f6;
+  color: #374151;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  border: 1px solid #e5e7eb;
+}/* Skills Header Styling */
+.skills-section {
+  margin-top: 3rem;
+}
+
+.skills-header {
+  margin-bottom: 1.5rem;
+}
+
+.skills-header h2 {
+  font-size: 1.75rem;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+.skills-header p {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+/* --- Projects Section Styles --- */
+.projects-section {
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+}
+
+.projects-header {
+  max-width: 1100px;
+  margin: 0 auto 2.5rem auto;
+}
+
+.projects-header h2 {
+  font-size: 2rem;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.projects-header p {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+/* --- Responsive CSS Grid Layout --- */
+.projects-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  /* Automatically fits cards: minimum 300px wide, fills remaining space */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Individual Project Card */
+.project-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Image Placeholder Area */
+.project-image-placeholder {
+  height: 180px;
+  background-color: #f3f4f6;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.placeholder-icon {
+  font-size: 3rem;
+  opacity: 0.7;
+}
+
+/* Badges (Status Indicators) */
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
+}
+
+.badge.in-progress {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.badge.planned {
+  background-color: #e0e7ff;
+  color: #3730a3;
+}
+
+.badge.completed {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+/* Project Info Content */
+.project-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Pushes links to bottom so all cards align */
+}
+
+.project-info h3 {
+  font-size: 1.25rem;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.project-info p {
+  font-size: 0.9rem;
+  color: #4b5563;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+  margin-top: auto; /* Aligns tags cleanly across cards */
+}
+
+/* Links & Buttons */
+.project-links {
+  border-top: 1px solid #f3f4f6;
+  padding-top: 1rem;
+}
+
+.btn-link {
+  color: #4f46e5;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+}
+
+.btn-link.disabled {
+  color: #9ca3af;
+  pointer-events: none;
+  font-style: italic;
+}
+
+/* --- Contact Section Styles --- */
+.contact-section {
+  padding: 5rem 2rem;
+  background-color: #f9f9fb;
+  border-top: 1px solid #e5e7eb;
+}
+
+.contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+/* Left Column: Info */
+.contact-info {
+  flex: 1;
+}
+
+.contact-info h2 {
+  font-size: 2.25rem;
+  color: #111827;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.contact-info p {
+  color: #4b5563;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  background: #ffffff;
+  padding: 0.75rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contact-item h4 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+  margin-bottom: 0.2rem;
+}
+
+.contact-item a {
+  color: #4f46e5;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  color: #9ca3af;
+}
+
+/* Right Column: Form */
+.contact-form-wrapper {
+  flex: 1.2;
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background-color: #f9fafb;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Highlight input on click/focus */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4f46e5;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  background-color: #4f46e5;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover {
+  background-color: #4338ca;
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* --- Footer Styles --- */
+.site-footer {
+  background-color: #111827;
+  color: #9ca3af;
+  padding: 1.5rem 2rem;
+  font-size: 0.875rem;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back-to-top {
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.back-to-top:hover {
+  color: #ffffff;
+}
+
+/* --- Responsive Layout for Mobile --- */
+@media (max-width: 868px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .contact-form-wrapper {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+}
