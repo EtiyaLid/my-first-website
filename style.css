@@ -1,41 +1,148 @@
+/* Remove default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    text-align: center;
-    padding: 50px;
 }
 
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-header {
+    padding: 20px 60px;
+
     background-color: #1e3a8a;
+}
+
+/* Logo */
+.logo {
     color: white;
-    padding: 30px;
-    border-radius: 10px;
 }
 
-
-main {
-    margin-top: 30px;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
+/* Navigation list */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
 }
 
+/* Links */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-button {
+/* Hover effect */
+.nav-links a:hover {
+    color: gold;
+}
+/* Remove default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 60px;
+
+    background-color: #1e3a8a;
+}
+
+/* Logo */
+.logo {
+    color: white;
+}
+
+/* Navigation list */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+/* Links */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hover effect */
+.nav-links a:hover {
+    color: gold;
+}
+
+/* Hero Section */
+#hero {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #f4f7fb;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    color: #1e3a8a;
+    margin-bottom: 15px;
+}
+
+#hero h2 {
+    font-size: 1.8rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
     background-color: #2563eb;
     color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 5px;
-    cursor: pointer;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-
-button:hover {
+.btn:hover {
     background-color: #1d4ed8;
-<<<<<<< HEAD
 }
-=======
+
+.btn-secondary {
+    background-color: #555;
 }
->>>>>>> 1d14080 (Create my first HTML CSS website)
+
+.btn-secondary:hover {
+    background-color: #333;
+}
